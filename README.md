@@ -112,6 +112,34 @@ A pull request is a proposal to merge a set of changes from one branch into anot
 ### GitHub Actions:
 #### Explain what GitHub Actions are and how they can be used to automate workflows. Provide an example of a simple CI/CD pipeline using GitHub Actions.
 
+GitHub Actions is a feature in GitHub that allows you to automate tasks within your software development lifecycle. With GitHub Actions, you can create workflows that build, test, package, release, and deploy your code based on specific events, such as push events, pull requests, or scheduled times. These workflows are defined using YAML files and are stored in the .github/workflows directory of your repository.
+
+#### Example of a Simple CI/CD Pipeline Using GitHub Actions
+Let's create a simple Continuous Integration/Continuous Deployment (CI/CD) pipeline using GitHub Actions. This example assumes a Node.js project, where we want to automatically run tests and deploy the application if the tests pass.
+
+**Step 1: Create a Workflow File**
+Create a directory named .github/workflows in the root of your repository if it doesn't already exist. Inside this directory, create a YAML file named ci-cd-pipeline.yml.
+
+#### Explanation of the Workflow
+**Trigger Events:** The workflow is triggered on pushes to the main branch and on pull requests targeting the main branch.
+ 
+ **Jobs:**
+   **build:** This job runs on an ubuntu-latest runner.
+
+**Steps:**
+  - **Checkout repository:** Uses the actions/checkout action to check out the code.
+  - **Set up Node.js:** Uses the actions/setup-node action to set up Node.js version 14.
+  - **Install dependencies:** Runs npm install to install project dependencies.
+  - **Run tests:** Runs npm test to execute the tests.
+
+**deploy:**
+This job depends on the build job (needs: build).
+It also runs on an ubuntu-latest runner.
+It only runs if the branch is main (if: github.ref == 'refs/heads/main').
+  **Steps:**
+    - **Checkout repository:** Uses the actions/checkout action to check out the code.
+    - **Deploy to server:** Runs a deployment script. In this example, it uses rsync to deploy files to a server. The deployment script uses a secret named DEPLOY_KEY for authentication, which you need to add to your repository's secrets.
+
 ### Introduction to Visual Studio:
 #### What is Visual Studio, and what are its key features? How does it differ from Visual Studio Code?
 
@@ -153,6 +181,8 @@ A pull request is a proposal to merge a set of changes from one branch into anot
 ### Integrating GitHub with Visual Studio:
 #### Describe the steps to integrate a GitHub repository with Visual Studio. How does this integration enhance the development workflow?
 
+
+
 ### Debugging in Visual Studio:
 #### Explain the debugging tools available in Visual Studio. How can developers use these tools to identify and fix issues in their code?
 
@@ -186,8 +216,3 @@ A pull request is a proposal to merge a set of changes from one branch into anot
 #### Discuss how GitHub and Visual Studio can be used together to support collaborative development. Provide a real-world example of a project that benefits from this integration.
 
 
-Submission Guidelines:
-Your answers should be well-structured, concise, and to the point.
-Provide real-world examples or case studies wherever possible.
-Cite any references or sources you use in your answers.
-Submit your completed assignment by [due date].
