@@ -182,10 +182,15 @@ It only runs if the branch is main (if: github.ref == 'refs/heads/main').
 
 #### Steps to Integrate a GitHub Repository with Visual Studio
 **Step: 1.** Ensure you have Visual Studio installed. You can download it from (https://visualstudio.microsoft.com/).
+
 **Step: 2.** Install GitHub Extension for Visual Studio, open your Visual Studio then go to `Extensions > Manage Extensions` then search for `Github Extension for Visual Studio` then download and install.
+
 **Step: 3.** Sign in to GitHub on your Visual Studion by going to `View > Team Explorer` then click `Manage Connections (the plug icon)` `Connect` then `Enter your GitHub credentials to sign in.`
+
 **Step: 4.** To clone a GitHub Repository  go to `Team Explorer`,  then click `Manage Connections`, under the GitHub section, click `Clone` then `enter the URL of the GitHub repository` or select a repository from the list if you're signed in. Choose a local path where you want to store the repository then `Clone`.
+
 **Step: 5.** To create a New GitHub Repository go to `Team Explorer`, then click `Manage Connections`, Under the GitHub section, click `Create` then `Enter the repository name,description, and other details`. Choose whether to make the repository `public or private` then click `Create`.
+
 **step: 6.** To connect an Existing Local Repository to GitHub go to `Team Explorer`, then click `Manage Connections` click `Add` under the Local Git Repositories section, navigate to the folder containing your local repository and click `Add`. In Team Explorer, click `Sync` to push the repository to GitHub, enter the `repository details` and click `Publish to GitHub`.
 
 #### Enhancing Development Workflow through Integration
@@ -237,7 +242,7 @@ Integrating GitHub with Visual Studio enhances collaborative development by comb
 #### Real-World Example: Open-Source Project - "CodeReviewHub"
 Project Overview: CodeReviewHub is an open-source project aimed at creating a platform for automated code reviews using machine learning. The project involves multiple contributors working on different features and improvements.
 
-####Workflow Using GitHub and Visual Studio
+#### Workflow Using GitHub and Visual Studio
 - **Cloning the Repository:** Contributors clone the CodeReviewHub repository from GitHub to their local machines using Visual Studio.
 - **Branching:** Each contributor creates a new branch for the feature or bug fix they are working on.
 - **Developing and Debugging:** Contributors use Visual Studio to develop and debug their features. They take advantage of IntelliSense, breakpoints, and other debugging tools to ensure their code works correctly.
